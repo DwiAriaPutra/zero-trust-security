@@ -1,0 +1,33 @@
+{
+  "name": "zero-trust-grade-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "npm": ">=11"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "db": "node --env-file-if-exists=.env --import tsx packages/database/src/cli.ts",
+    "db:migrate": "node --env-file-if-exists=.env --import tsx packages/database/src/cli.ts",
+    "db:seed:demo": "node --env-file-if-exists=.env --import tsx packages/auth/src/seed-cli.ts",
+    "dev:gateway": "npm run dev --workspace @zero-trust/api-gateway",
+    "dev:nilai": "npm run dev --workspace @zero-trust/service-nilai",
+    "nilai:seed:demo": "node --env-file-if-exists=.env --import tsx apps/service-nilai/src/seed-cli.ts",
+    "audit:recent": "node --env-file-if-exists=.env --import tsx tools/show-audit.ts",
+    "dev:transkrip": "npm run dev --workspace @zero-trust/service-transkrip"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.3"
+  }
+}

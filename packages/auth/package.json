@@ -1,0 +1,17 @@
+{
+  "name": "@zero-trust/auth",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@zero-trust/audit": "*",
+    "@zero-trust/database": "*",
+    "bcryptjs": "3.0.3"
+  }
+}

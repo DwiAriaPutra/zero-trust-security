@@ -1,0 +1,15 @@
+{
+  "name": "@zero-trust/service-transkrip",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=../../.env --import tsx src/index.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "@zero-trust/database": "*",
+    "@zero-trust/auth": "*",
+    "@zero-trust/audit": "*"
+  }
+}

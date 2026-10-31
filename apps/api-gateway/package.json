@@ -1,0 +1,16 @@
+{
+  "name": "@zero-trust/api-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=../../.env --import tsx src/index.ts"
+  },
+  "dependencies": {
+    "@zero-trust/auth": "*",
+    "@zero-trust/audit": "*",
+    "@zero-trust/database": "*",
+    "@zero-trust/policy-engine": "*",
+    "express": "^5.1.0"
+  }
+}
